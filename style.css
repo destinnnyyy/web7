@@ -1,0 +1,149 @@
+:root {
+    --bg: #f3f1ec;
+    --ink: #1d2a30;
+    --accent: #1f4e5f;
+    --muted: #b9b5ab;
+    --gap: 12px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 16px 48px;
+}
+
+.page__title {
+    margin: 0 0 24px;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+}
+
+.gallery {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.gallery__viewport {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.gallery__track {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    transition: transform 0.45s ease;
+}
+
+.gallery__item {
+    flex: 0 0 33.3333%;
+    padding: 0 calc(var(--gap) / 2);
+}
+
+.gallery__item img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.gallery__arrow {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--accent);
+    cursor: pointer;
+}
+
+.gallery__arrow:hover:not(:disabled) {
+    background: var(--accent);
+    color: #fff;
+}
+
+.gallery__arrow:focus-visible,
+.pager__dot:focus-visible {
+    outline: 3px solid #e8b04a;
+    outline-offset: 2px;
+}
+
+.gallery__arrow:disabled {
+    border-color: var(--muted);
+    color: var(--muted);
+    cursor: default;
+}
+
+.pager {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 20px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.pager__dot {
+    width: 14px;
+    height: 14px;
+    padding: 0;
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+}
+
+.pager__dot.is-active {
+    background: var(--accent);
+}
+
+.status {
+    margin: 10px 0 0;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 600px) {
+    .gallery__item {
+        flex-basis: 100%;
+    }
+
+    .gallery__arrow {
+        width: 40px;
+        height: 40px;
+    }
+
+    .gallery__arrow svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .page__title {
+        font-size: 1.6rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gallery__track {
+        transition: none;
+    }
+}

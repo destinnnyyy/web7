@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Галерея изображений</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="page">
+        <h1 class="page__title">Галерея</h1>
+
+        <div id="gallery" class="gallery" role="region" aria-label="Галерея изображений">
+            <button id="prev" class="gallery__arrow gallery__arrow--prev" type="button" aria-label="Назад">
+                <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M15 4l-8 8 8 8" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+
+            <div class="gallery__viewport">
+                <ul class="gallery__track">
+                    <li class="gallery__item"><img src="images/photo-1.svg" width="400" height="400" alt="Изображение 1"></li>
+                    <li class="gallery__item"><img src="images/photo-2.svg" width="400" height="400" alt="Изображение 2"></li>
+                    <li class="gallery__item"><img src="images/photo-3.svg" width="400" height="400" alt="Изображение 3"></li>
+                    <li class="gallery__item"><img src="images/photo-4.svg" width="400" height="400" alt="Изображение 4"></li>
+                    <li class="gallery__item"><img src="images/photo-5.svg" width="400" height="400" alt="Изображение 5"></li>
+                    <li class="gallery__item"><img src="images/photo-6.svg" width="400" height="400" alt="Изображение 6"></li>
+                    <li class="gallery__item"><img src="images/photo-7.svg" width="400" height="400" alt="Изображение 7"></li>
+                    <li class="gallery__item"><img src="images/photo-8.svg" width="400" height="400" alt="Изображение 8"></li>
+                </ul>
+            </div>
+
+            <button id="next" class="gallery__arrow gallery__arrow--next" type="button" aria-label="Вперёд">
+                <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M9 4l8 8-8 8" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+        </div>
+
+        <ul id="pager" class="pager"></ul>
+        <p id="status" class="status" aria-live="polite"></p>
+    </main>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/gallery.js"></script>
+</body>
+</html>
