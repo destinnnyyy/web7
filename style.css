@@ -1,8 +1,13 @@
 :root {
-    --bg: #f3f1ec;
-    --ink: #1d2a30;
-    --accent: #1f4e5f;
-    --muted: #b9b5ab;
+    --bg: #14080c;
+    --bg-soft: #1c0e13;
+    --ink: #f2e6e9;
+    --ink-muted: #c9a8b0;
+    --accent: #8b1e3f;
+    --accent-hover: #a5284d;
+    --accent-soft: #5c1429;
+    --muted: #4a2a35;
+    --gold: #d4a574;
     --gap: 12px;
 }
 
@@ -15,31 +20,35 @@ body {
     background: var(--bg);
     color: var(--ink);
     font-family: Georgia, "Times New Roman", serif;
+    min-height: 100vh;
 }
 
 .page {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 32px 16px 48px;
+    padding: 40px 16px 56px;
 }
 
 .page__title {
-    margin: 0 0 24px;
-    font-size: 2rem;
+    margin: 0 0 28px;
+    font-size: 2.1rem;
     font-weight: 400;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    text-align: center;
 }
 
 .gallery {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
 }
 
 .gallery__viewport {
     flex: 1 1 auto;
     min-width: 0;
     overflow: hidden;
+    border-radius: 6px;
 }
 
 .gallery__track {
@@ -59,6 +68,8 @@ body {
     display: block;
     width: 100%;
     height: auto;
+    border-radius: 4px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
 }
 
 .gallery__arrow {
@@ -74,16 +85,18 @@ body {
     background: transparent;
     color: var(--accent);
     cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .gallery__arrow:hover:not(:disabled) {
     background: var(--accent);
+    border-color: var(--accent-hover);
     color: #fff;
 }
 
 .gallery__arrow:focus-visible,
 .pager__dot:focus-visible {
-    outline: 3px solid #e8b04a;
+    outline: 3px solid var(--gold);
     outline-offset: 2px;
 }
 
@@ -96,30 +109,38 @@ body {
 .pager {
     display: flex;
     justify-content: center;
-    gap: 8px;
-    margin: 20px 0 0;
+    gap: 10px;
+    margin: 24px 0 0;
     padding: 0;
     list-style: none;
 }
 
 .pager__dot {
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
     padding: 0;
     border: 2px solid var(--accent);
     border-radius: 50%;
     background: transparent;
     cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.pager__dot:hover {
+    border-color: var(--accent-hover);
 }
 
 .pager__dot.is-active {
     background: var(--accent);
+    border-color: var(--accent-hover);
 }
 
 .status {
-    margin: 10px 0 0;
+    margin: 14px 0 0;
     text-align: center;
     font-size: 0.95rem;
+    color: var(--ink-muted);
+    letter-spacing: 0.02em;
 }
 
 @media (max-width: 600px) {
@@ -138,7 +159,7 @@ body {
     }
 
     .page__title {
-        font-size: 1.6rem;
+        font-size: 1.65rem;
     }
 }
 
